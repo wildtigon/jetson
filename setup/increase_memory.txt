@@ -1,0 +1,9 @@
+systemctl disable nvzramconfig
+fallocate -l 8G /mnt/8GB.swap
+chmod 600 /mnt/8GB.swap
+mkswap /mnt/8GB.swap
+vi /etc/fstab 
+//// add below 1 line
+/mnt/8GB.swap swap swap defaults 0/0
+
+free -m
